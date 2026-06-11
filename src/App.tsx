@@ -1,25 +1,57 @@
-import { Button } from "@/components/ui/button"
-import AccordionDemo from "./demo.tsx"
-import { CardImage } from "./image.tsx"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
-export function App() {
-  return (
-    <div className="flex">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-          <AccordionDemo />
-          <CardImage />
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+import * as React from "react"
+
+export default function App(){
+  return(
+  <>
+    <div className="flex min-h-screen items-center justify-center p-10 ">
+      <div className="w-full max-w-4xl p-4 " >
+      <Carousel>
+        <CarouselContent className="-ml-4">
+          <CarouselItem className="pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+            <div className="p-1">
+              <img src="https://images.wallpaperscraft.com/image/single/coffee_table_cup_119666_1920x1080.jpg" 
+              className="aspect-square w-full object-cover rounded-xl"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem className="pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+            <div className="p-1">
+              <img src="https://images.wallpaperscraft.com/image/single/cat_open_inscription_160287_1920x1080.jpg"  
+              className="aspect-square w-full object-cover rounded-xl"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem className="pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+            <div className="p-1">
+              <img src="https://images.wallpaperscraft.com/image/single/coffee_cappuccino_cup_136699_1920x1080.jpg"
+              className="aspect-square w-full object-cover rounded-xl"
+              />
+            </div>
+          </CarouselItem>
+        <CarouselItem className="pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+            <div className="p-1">
+              <img src="https://images.wallpaperscraft.com/image/single/cup_coffee_books_156306_1920x1080.jpg"  
+              className="aspect-square w-full object-cover rounded-xl"
+              />
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
       </div>
     </div>
-  )
-}
 
-export default App
+
+
+  </>
+  );
+}
